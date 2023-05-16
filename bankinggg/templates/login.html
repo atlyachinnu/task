@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+
+<form action="login" method="post" >
+     {% csrf_token %}
+     <input type="text" name="username" placeholder="enter your username"><br>
+  <input type="password" name="password" placeholder="enter your password"><br>
+
+ <a class="active" href="{% url 'credentials:new' %}"><button type="button" class="btn btn-secondary">submit</button></a><br>
+    <a class="active" href="{% url 'credentials:register' %}">Register Link</a><br>
+
+
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>
